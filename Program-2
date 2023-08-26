@@ -1,0 +1,29 @@
+//Program2
+#include <iostream> //this is adding a libary 
+#include <iomanip> //precision liabary 
+
+using namespace std;
+
+int main()
+{
+	float i, sum, N; 
+	sum = 0; 
+	i = 5; 
+	
+	cout << "Input N value: "; 
+	cin >> N; 
+	
+	while (i <= N) {
+		
+		sum += (8.5*N*i); 
+	 	sum = sum - N; 
+		 
+		i++;
+		
+	} 
+	
+	cout << "Sum: " << sum << endl; 
+	cout << "i: " << i << endl; 
+
+	return 0; 
+}
