@@ -1,0 +1,28 @@
+#BMI Calc
+close = 1
+
+while close > 0: 
+  weightinKG = float(input("What is your weight in kg?: "))
+  heightinM = float(input("What is your height in meters?: "))
+
+  numer = weightinKG
+  demon = heightinM * heightinM
+  BMI = numer/demon
+
+  print ("Your BMI is: ", '%.1f'%BMI, "please look at the chart below and evaulate your BMI")
+  print(" ")
+  print ("BMI Values: ")
+
+  if (BMI < 18.5):
+    print ("Underweight: less than 18.5")
+  if (BMI >=18.5 and BMI < 24.9):
+    print ("Normal: between 18.5 and 24.9")
+  if (BMI >= 25 and BMI < 29.9):
+    print ("Overweight: between 25 and 29.9")
+  if (BMI >= 30):
+    print ("Obese: 30 or greater")
+
+  print(" ")
+  close = int(input("1 to go or 0 to close: "))
+  print(" ")
+ 
