@@ -1,0 +1,68 @@
+// Program1
+#include <iostream> //this is adding a libary 
+#include <iomanip> //precision liabary 
+
+using namespace std;
+
+int main()
+{
+	
+	float weightinkilograms, heightinmeters, bmi, denominator, numerator, close;
+	
+	while (close > 0) {
+	
+		cout << "What is your weight (in kilograms)? "; 
+		cin >> weightinkilograms;
+	
+		cout << "What is your height (in meters)? "; 
+		cin >> heightinmeters;
+		
+		numerator = weightinkilograms;
+		denominator = heightinmeters*heightinmeters;
+
+		bmi = numerator/denominator;
+		cout << setprecision(1) << fixed << endl;
+			
+		cout << "Your BMI is " << bmi << " please look at the chart below and evaulate your BMI." << endl;
+			
+		cout << endl;
+		
+		cout << "BMI VAULES" << endl;
+		
+		if (bmi < 18.5)
+		{
+	        cout << "Underweight: " << "less than 18.5" << endl;
+		}
+		
+		if ((bmi >= 18.5) & (bmi < 24.9))
+		{
+			cout << "Normal: " << "     between 18.5 and 24.9" << endl;
+	    }
+	
+		if ((bmi >= 25) & (bmi < 29.9))
+		{
+	        cout << "Overweight: " << " between 25 and 29.9" << endl;
+	    }
+	
+		if (bmi >= 30)
+		{
+    	    cout << "Obese: " << "      30 or greater" << endl;
+    	}
+	
+	cout << endl; 
+	
+	cout << "1 to go or 0 to close: ";
+	cin >> close;
+	
+	cout << endl; 
+	
+	}
+	 
+	
+	return 0;
+	
+}
+ 
+
+
+
