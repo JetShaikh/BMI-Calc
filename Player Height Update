@@ -1,0 +1,60 @@
+#include <iostream> //this is adding a libary 
+#include <iomanip> //precision liabary 
+
+using namespace std;
+
+int main()
+{
+	
+	int heightInch, playerCount, avgInch, avgFeet, inch, close;  
+	
+	playerCount = 0;
+	heightInch = 0; 
+	close = 1; 
+	 
+	int N, sum = 0, i, avgHeightArray[10]; 
+	
+	while (close > 0) {
+	
+		cout << "Enter height in inches for each player: "; 
+		cout << " " << endl; 
+		
+		for(i = 0; i < 10; i++) { // has an array for the heights of the athlets
+			cin >> avgHeightArray[i]; 
+			avgInch = avgInch + avgHeightArray[i]; 
+		}
+			
+		avgInch = avgInch / 10; 
+		inch = (avgInch % 12); //remainder = %; inch
+		avgFeet = (avgInch - inch) / 12;  // computes the height and inches and set them apart 
+			 
+		cout << "\nThe average height of your player's is: " << avgFeet << " Feet and " << inch << " Inch(s)." << endl;	
+		
+		if (avgInch >= 77) {			
+				
+				cout << "Which indicates the team is best suited for the NBA" << endl;
+				
+		} if (avgInch >= 66 && avgInch <= 76) {
+			
+			cout << "Which indicates the team is best suited for the MLA" << endl;
+			
+		} if (avgInch <= 65) {
+			
+			cout << "Which indicates the team is best suited as a group of Jockeys (Kentucky Derby)" << endl;
+			
+		}  
+		
+		cout << endl; 
+		
+		cout << "1 to go or 0 to close: ";
+		cin >> close;
+		
+		cout << endl; 
+	
+	}
+	
+	return 0; 
+	
+} 
+ 
+
