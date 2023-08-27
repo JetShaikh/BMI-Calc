@@ -1,0 +1,51 @@
+//writing and reading an excel file
+
+#include <iostream> //this is adding a libary -- basic stuff 
+#include <iomanip> //precision libary -- preciosn (decimal reminader etc) -- all the number stuff
+#include <fstream> //enables to read and write 
+#include <string>  //type text
+
+using namespace std;
+
+int main()
+{
+	int heightInch, playerCount, avgInch, avgFeet, inch;  
+	ofstream out;
+	
+	playerCount = 0;
+	heightInch = 0; 
+	avgInch = 0;
+	
+	std::ifstream infile("PlayerData.csv"); //excel sheet with the heights 
+	
+	out.open("Result.txt", ios::app);
+	
+	while (infile >> heightInch) { 
+		avgInch = avgInch + heightInch; 
+		playerCount++;
+	}
+	
+	avgInch = avgInch / playerCount;
+	inch = (avgInch % 12); //remainder = %; inch
+	avgFeet = (avgInch - inch) / 12;  
+	
+	
+	out << "The average height of your player's is: " << avgFeet << " Feet and " << inch << " Inch(s)." <<endl;
+	
+	if (avgInch >= 77) {			
+		
+		out << "Which indicates the team is best suited for the NBA\n" << endl;
+			
+	} if (avgInch >= 66 && avgInch <= 76) {
+		
+		out << "Which indicates the team is best suited for the MLA\n" << endl;
+		
+	} if (avgInch <= 65) {
+		
+		out << "Which indicates the team is best suited as a group of Jockeys (Kentucky Derby)\n" << endl;
+		
+	}  	
+
+	return 0; 
+}
+
