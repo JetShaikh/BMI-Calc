@@ -1,0 +1,19 @@
+clc, clear
+
+matrix = input('Enter an array of values in [] = ');
+max = input("Compare Value = ");
+
+i = 0;
+occurrences = 0; 
+
+for index = 1:(size(matrix,1) * size(matrix,2))
+    if max < matrix(index)
+        occurrences = occurrences + 1; 
+    end
+    i = i + 1; 
+end
+
+fprintf('Number of occurrences are = %d\n', occurrences );
+
+ 
+ 
